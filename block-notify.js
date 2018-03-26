@@ -18,6 +18,11 @@ for (var i = 0; i < args.length; i++) {
 
 var command = params.shift();
 
+if (command === 'test') {
+    console.log('This is the block-notify script');
+    return;
+}
+
 var client = net.connect(options.port || defaultPort, options.host || defaultHost, function() {
     client.write(JSON.stringify({
         command: command,
